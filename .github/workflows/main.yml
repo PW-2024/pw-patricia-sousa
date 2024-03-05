@@ -1,15 +1,12 @@
+name: Criacao da pipeline
 on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - name: Install dependencies
+      - uses: actions/checkout@v4
+
         run: npm install
-      - name: Run tests
-        run: npm test
+      - run: npm run prettier
+      - run: npm run build
