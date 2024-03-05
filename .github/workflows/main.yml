@@ -1,5 +1,5 @@
 name: Criacao da pipeline
-on: [push, pull_request]
+on: [ pull_request]
 
 jobs:
   build:
@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-        run: npm install
+      - run: npm install
       - run: npm run prettier
       - run: npm run build
